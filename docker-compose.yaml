@@ -1,11 +1,12 @@
 version: "3.8"
+
 services:
   prestashop:
     image: prestashop/prestashop
     ports:
       - 8080:80
     links:
-      - mariadb:mariadb
+      - mariadb
     depends_on:
       - mariadb
     volumes:
@@ -41,7 +42,7 @@ services:
     environment:
       - PMA_HOST=mariadb
       - PMA_USER=root
-      - PMA_PASSWORD=mycustompassword
+      - PMA_PASSWORD=test
 
 volumes:
   presta_db:
