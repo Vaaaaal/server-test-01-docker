@@ -30,7 +30,7 @@ services:
       - MYSQL_DATABASE=prestashop
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin
     networks:
     links:
       - mariadb:mariadb
