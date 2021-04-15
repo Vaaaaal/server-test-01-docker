@@ -4,12 +4,13 @@ services:
   prestashop:
     image: prestashop/prestashop
     ports:
-      - 8080:80
+      - 80:80
     links:
       - mariadb
     depends_on:
       - mariadb
     volumes:
+      - ./config/prestashop.config:/etc/apache2/sites-available/000-default.conf
       - ./src:/var/www/html
       - ./src/modules:/var/www/html/modules
       - ./src/themes:/var/www/html/themes
